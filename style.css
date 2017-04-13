@@ -1,0 +1,86 @@
+* {
+    outline: none;
+}
+
+#main-text {
+    font-family: Poppins;
+    text-align: center;
+    font-size: 500%
+}
+
+
+button.button {
+    border: none;
+    border-radius: 15px;
+    width: 25%;
+    height: 10%;
+}
+
+
+button.red {
+    background-color: #ff2b2b;
+    box-shadow: 0 10px #c80000;
+}
+button.red:hover {
+    background-color: #ef3b3b;
+    /*TODO:Подобрать более темные цвета*/
+}
+button.red:active {
+    background-color: #ef3b3b;
+    box-shadow: 0 5px #c80000;
+    transform: translateY(5px);
+}
+
+.red-text {
+    font-size: 200%;
+    color: #a10000;
+}
+
+
+button.blue {
+    background-color: #6495ed;
+    box-shadow: 0 10px #154db3;
+}
+button.blue:hover {
+    background-color: #7199e0;
+    /*TODO:Подобрать более темные цвета*/
+}
+button.blue:active {
+    background-color: #7199e0;
+    box-shadow: 0 5px #154db3;
+    transform: translateY(5px);
+}
+
+.blue-text {
+    font-size: 200%;
+    color: #113e90;
+}
+
+
+#top {
+    height: 34vh;
+    background-color: black;
+    position: top;
+    float: left;
+    width: 100%;
+}
+
+
+#left {
+    background-color: red;
+    width: 50%;
+    float: left;
+    height: 66vh;
+}
+
+#right {
+    background-color: blue;
+    width: 50%;
+    float: right;
+    height: 66vh;
+}
+
+
+#bottom {
+    /* TODO */
+}
