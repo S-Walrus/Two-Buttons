@@ -96,7 +96,13 @@ body {
     width: 50%;
     margin: 80px 25%;
     font-family: Mechanical;
+    
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
 }
+
 
 @font-face {
     font-family: Mechanical;
