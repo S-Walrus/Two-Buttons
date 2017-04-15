@@ -12,8 +12,9 @@
 button.button {
     border: none;
     border-radius: 15px;
-    width: 25%;
-    height: 10%;
+    width: 50%;
+    height: 20%;
+    margin: 160px 25% 0px 25%;
 }
 
 
@@ -59,7 +60,6 @@ button.blue:active {
 
 #top {
     height: 34vh;
-    background-color: black;
     position: top;
     float: left;
     width: 100%;
@@ -67,14 +67,12 @@ button.blue:active {
 
 
 #left {
-    background-color: red;
     width: 50%;
     float: left;
     height: 66vh;
 }
 
 #right {
-    background-color: blue;
     width: 50%;
     float: right;
     height: 66vh;
@@ -82,5 +80,25 @@ button.blue:active {
 
 
 #bottom {
-    /* TODO */
+    float: left;
+    height: 34vh;
+}
+
+
+body {
+    background-color: #4a505e;
+}
+
+
+.number {
+    font-family: sans-serif, arial;
+    font-size: 200%;
+    width: 50%;
+    margin: 80px 25%;
+    font-family: Mechanical;
+}
+
+@font-face {
+    font-family: Mechanical;
+    src: url(MechanicalBd.otf)
 }
