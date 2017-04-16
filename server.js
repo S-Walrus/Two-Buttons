@@ -28,10 +28,39 @@ var BlueClicks = 0;
 //The most interesting part of this file!
 io.on('connection', function(socket) {
     console.log('User connected');
+    online++;
 
     //Disconnect event
     socket.on('disconnect', function() {
         console.log('User disconnected');
+        online--;
+    });
+
+
+    //Red button click event
+    socket.on('red clicked', function(callback) {
+        RedClicks++;
+        console.log('Red button clicks number is ' + RedClicks);
+
+        //As true I don't know, why does it works.
+        socket.broadcast.emit('red clicked');
+    });
+
+
+    //Blue button click event
+    socket.on('blue clicked', function() {
+        BlueClicks++;
+        console.log('Blue button clicks number is ' + BlueClicks);
+
+        //As true I don't know, why does it works.
+        socket.broadcast.emit('blue clicked');
+    });
+
+
+    //Sending variables to client
+    socket.on('request', function(callback) {
+        callback(RedClicks, BlueClicks, online);
+        console.log('Sending variables...');
     });
 });
 

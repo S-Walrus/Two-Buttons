@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Local files -->
-    <link href="style.css" rel="stylesheet">
-    <script src="client.js"></script>
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
     <!-- Frameworks -->
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Local files -->
+    <link href="style.css" rel="stylesheet">
+    <script src="client.js"></script>
 
     <!-- Title -->
     <title>What button would you choose?</title>
@@ -31,19 +32,13 @@
 
     <div>
         <div id="left">
-            <button class="red button"> <h2 class="red-text">Red</h2> </button>
-            <p class="number">
-                Clicked: <br>
-                432988 kvintillions <br>
-                543989 trillions <br>
-                480921 millions <br>
-                340922 times
-            </p>
+            <button class="button" id="RedButton"> <h2 class="red-text">Red</h2> </button>
+            <p class="number" id="RedClicks">Clicked:<br>0 times</p>
         </div>
 
         <div id="right">
-            <button class="blue button"> <h2 class=blue-text>Blue</h2> </button>
-            <p class="number">12321312<br>32314343</p>
+            <button class="button" id="BlueButton"> <h2 class=blue-text>Blue</h2> </button>
+            <p class="number" id="BlueClicks">Clicked:<br>0 times</p>
         </div>
     </div>
 

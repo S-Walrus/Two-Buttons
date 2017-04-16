@@ -18,15 +18,15 @@ button.button {
 }
 
 
-button.red {
+#RedButton {
     background-color: #ff2b2b;
     box-shadow: 0 10px #c80000;
 }
-button.red:hover {
+#RedButton:hover {
     background-color: #ef3b3b;
     /*TODO:Подобрать более темные цвета*/
 }
-button.red:active {
+#RedButton:active {
     background-color: #ef3b3b;
     box-shadow: 0 5px #c80000;
     transform: translateY(5px);
@@ -38,15 +38,15 @@ button.red:active {
 }
 
 
-button.blue {
+#BlueButton {
     background-color: #6495ed;
     box-shadow: 0 10px #154db3;
 }
-button.blue:hover {
+#BlueButton:hover {
     background-color: #7199e0;
     /*TODO:Подобрать более темные цвета*/
 }
-button.blue:active {
+#BlueButton:active {
     background-color: #7199e0;
     box-shadow: 0 5px #154db3;
     transform: translateY(5px);
