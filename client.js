@@ -1,6 +1,7 @@
 var RedClicks = 0;
 var BlueClicks = 0;
 var online = 0;
+var scrolled = false;
 
 
 $(document).ready(function() {
@@ -47,7 +48,18 @@ $(document).ready(function() {
     socket.on('blue clicked', function() {
         increaseBlueClicks();
     });
+
+
+    /*$('body').scroll(function() {
+        if(!scrolled) {
+            //TODO
+        }
+    });*/
 });
+
+
+
+
 
 
 function increaseRedClicks() {

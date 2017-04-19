@@ -17,6 +17,10 @@ app.get('/client.js', function(req, res){
 app.get('/MechanicalBd.otf', function(req, res){
     res.sendFile(__dirname + '/MechanicalBd.otf');
 });
+
+app.get('/chevron.png', function(req, res) {
+    res.sendFile(__dirname + '/chevron.png');
+});
 //  Initializaton   ///////////////////////////////
 
 var online = 0;

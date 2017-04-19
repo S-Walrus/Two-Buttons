@@ -108,3 +108,10 @@ body {
     font-family: Mechanical;
     src: url(MechanicalBd.otf)
 }
+
+
+#arrow {
+    position: fixed;
+    bottom: 5px;
+    left: 49%;
+}
