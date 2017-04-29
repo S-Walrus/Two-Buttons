@@ -34,10 +34,14 @@ io.on('connection', function(socket) {
     console.log('User connected');
     online++;
 
+    socket.emit('online', online);
+
     //Disconnect event
     socket.on('disconnect', function() {
         console.log('User disconnected');
         online--;
+
+        socket.emit('online', online);
     });
 
 
@@ -46,7 +50,7 @@ io.on('connection', function(socket) {
         RedClicks++;
         console.log('Red button clicks number is ' + RedClicks);
 
-        //As true I don't know, why does it works.
+        //As true, I don't know, why does it works.
         socket.broadcast.emit('red clicked');
     });
 
@@ -56,7 +60,7 @@ io.on('connection', function(socket) {
         BlueClicks++;
         console.log('Blue button clicks number is ' + BlueClicks);
 
-        //As true I don't know, why does it works.
+        //As true, I don't know, why does it works.
         socket.broadcast.emit('blue clicked');
     });
 

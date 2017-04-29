@@ -2,6 +2,7 @@ var RedClicks = 0;
 var BlueClicks = 0;
 var online = 0;
 var scrolled = false;
+var arrow = false;
 
 
 $(document).ready(function() {
@@ -16,25 +17,39 @@ $(document).ready(function() {
         online = parseInt(onl);
 
         document.getElementById('RedClicks').innerHTML =
-            'Clicked:<br>' + RedClicks + ' times';
+                'Clicked:<br>' + RedClicks + ' times';
         document.getElementById('BlueClicks').innerHTML =
                 'Clicked:<br>' + BlueClicks + ' times';
+        document.getElementById('online').innerHTML =
+                'Online: ' + (online - 1);
     });
 
 
-    //Red button's clicks' handler
+    //Red button clicks handler
     $('#RedButton').click(function() {
 
         socket.emit('red clicked');
         increaseRedClicks();
+
+        if(scrolled == false && arrow == false) {
+            document.getElementById('arrow_div').innerHTML =
+                '<img src="/chevron.png" id="arrow">';
+                arrow = true;
+        }
     });
 
 
-    //Blue button's clicks' handler
+    //Blue button clicks handler
     $('#BlueButton').click(function() {
 
         socket.emit('blue clicked');
         increaseBlueClicks();
+
+        if(scrolled == false && arrow == false) {
+            document.getElementById('arrow_div').innerHTML =
+                '<img src="/chevron.png" id="arrow">';
+                arrow = true;
+        }
     });
 
 
@@ -44,17 +59,26 @@ $(document).ready(function() {
     });
 
 
-    //Blue button click event
+    //Blue button click event handle
     socket.on('blue clicked', function() {
         increaseBlueClicks();
     });
 
 
-    /*$('body').scroll(function() {
-        if(!scrolled) {
-            //TODO
+    socket.on('online', function(onl) {
+        online = onl;
+        document.getElementById('online').innerHTML =
+                'Online: ' + (online - 1);
+    });
+
+
+    $(window).scroll(function() {
+        if(arrow) {
+            document.getElementById('arrow').outerHTML = '';
+            arrow = false;
+            scroll = true;
         }
-    });*/
+    });
 });
 
 
