@@ -34,14 +34,13 @@ io.on('connection', function(socket) {
     console.log('User connected');
     online++;
 
-    socket.emit('online', online);
-
     //Disconnect event
     socket.on('disconnect', function() {
         console.log('User disconnected');
         online--;
 
-        socket.emit('online', online);
+        socket.broadcast.emit('online', online);
+        console.log('Now ' + online + " user(s) online.");
     });
 
 
@@ -69,6 +68,9 @@ io.on('connection', function(socket) {
     socket.on('request', function(callback) {
         callback(RedClicks, BlueClicks, online);
         console.log('Sending variables...');
+
+        socket.broadcast.emit('online', online);
+        console.log('Now ' + online + " users online.");
     });
 });
 
