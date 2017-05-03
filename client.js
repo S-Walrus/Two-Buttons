@@ -17,9 +17,9 @@ $(document).ready(function() {
         online = parseInt(onl);
 
         document.getElementById('RedClicks').innerHTML =
-                'Clicked:<br>' + RedClicks + ' times';
+                renderNum(RedClicks);
         document.getElementById('BlueClicks').innerHTML =
-                'Clicked:<br>' + BlueClicks + ' times';
+                renderNum(BlueClicks);
         document.getElementById('online').innerHTML =
                 'Online: ' + (online - 1);
     });
@@ -91,7 +91,7 @@ function increaseRedClicks() {
 
     //Render
     document.getElementById('RedClicks').innerHTML =
-            'Clicked:<br>' + RedClicks + ' times';
+            renderNum(RedClicks);
 }
 
 
@@ -100,10 +100,18 @@ function increaseBlueClicks() {
 
     //Render
     document.getElementById('BlueClicks').innerHTML =
-            'Clicked:<br>' + BlueClicks + ' times';
+            renderNum(BlueClicks);
 }
 
 
-/*   TODO:  переменные принимаются клиентом при загрузке
-    слишком долго, так что программа записывает исходные звачения кликов
-    надо сделать так, чтобы она писала принимаемые значения   */
+function renderNum(num) {
+    var result = "Clicked:<br>";
+    if(num >= Math.pow(10, 12)) {
+        var trill = num - num % Math.pow(10, 12);
+        result += (trill / Math.pow(10, 12)) + " trillions<br>";
+    }
+    if(num > Math.pow(10, 6))
+        result += ((num - trill - (num % Math.pow(10, 6))) / Math.pow(10, 6)) + " millions<br>";
+    result += num % Math.pow(10, 6) + " times";
+    return result;
+}

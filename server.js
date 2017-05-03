@@ -72,6 +72,11 @@ io.on('connection', function(socket) {
         socket.broadcast.emit('online', online);
         console.log('Now ' + online + " users online.");
     });
+
+
+    socket.on("log", function(data) {
+        console.log(data);
+    });
 });
 
 
