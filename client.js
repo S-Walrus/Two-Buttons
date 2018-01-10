@@ -21,7 +21,7 @@ $(document).ready(function() {
         document.getElementById('BlueClicks').innerHTML =
                 renderNum(BlueClicks);
         document.getElementById('online').innerHTML =
-                'Online: ' + (online - 1);
+                'Online: ' + online;
     });
 
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
     socket.on('online', function(onl) {
         online = onl;
         document.getElementById('online').innerHTML =
-                'Online: ' + (online - 1);
+                'Online: ' + online;
     });
 
 
